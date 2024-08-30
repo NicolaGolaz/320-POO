@@ -9,25 +9,25 @@ namespace snail
     {
         static void Main(string[] args)
         {
-           int intVie = 50;
+            int intVie = 50;
             const int intMaxPv = 50;
             string strSnail = "_@_ö";
 
             for (int i = 0; i < intMaxPv; i++)
             {
 
-               
-                    Thread.Sleep(50);
-                    Console.Clear();
-                    Console.CursorVisible = false;
-                    Console.SetCursorPosition(i, 5);
-                    Console.WriteLine(strSnail);
 
-                    intVie = intVie - 1;
-                
+                Thread.Sleep(50);
+                Console.Clear();
+                Console.CursorVisible = false;
+                Console.SetCursorPosition(i, 5);
+                Console.WriteLine(strSnail);
+
+                intVie = intVie - 1;
+
             }
-            Console.Clear() ;
-            Console.Set
+            Console.Clear();
+            Console.SetCursorPosition(intMaxPv, 5);
             strSnail = "____";
             Console.WriteLine(strSnail);
             Console.ReadLine();
