@@ -11,9 +11,10 @@ namespace classPlane
         // Attributs
 
         private int x = 0;
+        private int y = 0;
 
-        private string[] view =
-    {
+        public string[] view =
+        {
             @" _                         ",
             @"| \                        ",
             @"|  \       ______          ",
@@ -27,10 +28,25 @@ namespace classPlane
 
         // Méthodes 
 
-        public void Move()
+        public void draw()
+        {
+            
+            foreach (string line in view)
+            {
+            
+
+                Console.SetCursorPosition(x, Console.CursorTop);
+                Console.WriteLine(line);
+            }
+
+        }
+
+        public void update()
         {
             x++;
+           
         }
+
 
     }
 }

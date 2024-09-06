@@ -5,6 +5,10 @@ using System.Text;
 using System.Threading.Tasks;
 using classPlane;
 using classConfig;
+using System.Data;
+using System.Threading;
+using System.Runtime.CompilerServices;
+using parachutes;
 
 namespace parachutes
 {
@@ -15,11 +19,23 @@ namespace parachutes
 
             Plane plane = new Plane();
 
+
+            Console.CursorVisible = false;
+
             while (true)
             {
-                Console.SetCursorPosition(plane.x, 0);
-                
+               
+                plane.update();
+                plane.draw();
+           
+
+                Thread.Sleep(100);
+                Console.Clear();
+
             }
+
+
+           
 
         }
     }
