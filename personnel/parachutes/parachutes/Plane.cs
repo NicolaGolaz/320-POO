@@ -1,4 +1,6 @@
-﻿using System;
+﻿using classConfig;
+using parachutes;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -9,7 +11,7 @@ namespace classPlane
     internal class Plane
     {
         // Attributs
-
+        private int altitude;
         private int x = 0;
         private int y = 0;
 
@@ -23,10 +25,20 @@ namespace classPlane
             @"        \_____|_____/   |  "
         };
 
+        public List<Para> parachutists;
+        
 
         // Constructeur
 
         // Méthodes 
+
+        public Plane ()
+        {
+            x = 0;
+            altitude = Config.SCREEN_HEIGHT;
+            parachutists = new List<Para> ();
+
+        }
 
         public void draw()
         {
@@ -47,6 +59,18 @@ namespace classPlane
            
         }
 
+        public void board(Para para)
+        {
+            this.parachutists.Add(para);
+        }
 
+        internal Para dropParachutist()
+        {
+            Para parachutist = parachutists.First();
+            parachutists.Remove(parachutist);
+            parachutist.X = x;
+            parachutist.Altitude = this.altitude;
+            return parachutist;
+        }
     }
 }
