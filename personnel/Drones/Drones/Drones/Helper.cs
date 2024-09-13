@@ -15,7 +15,7 @@ namespace Drones
 
 
 
-            int valeurPositionX = random.Next(0, 1200);
+            int valeurPositionX = random.Next(0, 1100);
 
             return valeurPositionX;
 

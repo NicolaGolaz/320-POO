@@ -1,3 +1,5 @@
+using Drones.View;
+
 namespace Drones
 {
     internal static class Program
@@ -24,8 +26,11 @@ namespace Drones
             
             for (int i = 0; i < Building.NbrBuild; i++)
             {
-                Building building = new Building();
-                buildings.Add(building);
+                Factory factory = new Factory();
+                buildings.Add(factory);
+
+                Store store = new Store();
+                buildings.Add(store);
             }
 
             // Démarrage

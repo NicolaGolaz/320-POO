@@ -1,3 +1,5 @@
+using Drones.View;
+
 namespace Drones
 {
     // La classe AirSpace représente le territoire au dessus duquel les drones peuvent voler
@@ -6,9 +8,9 @@ namespace Drones
 
     public partial class AirSpace : Form
     {
-       
 
-        
+
+
 
         // La flotte est l'ensemble des drones qui évoluent dans notre espace aérien
         private List<Drone> fleet;
@@ -44,7 +46,17 @@ namespace Drones
             // draw buidings
             foreach (Building building in buildings)
             {
-                building.Render(airspace);
+                if (building.GetType() == typeof(Factory))
+                {
+                    Factory factory = (Factory)building;
+                    factory.Render(airspace);
+                }
+                else if (building.GetType() == typeof(Store))
+                {
+                    Store store = (Store)building;
+                    store.Render(airspace);
+                }
+
             }
 
             airspace.Render();

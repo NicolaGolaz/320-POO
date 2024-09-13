@@ -6,7 +6,7 @@ using System.Security.Policy;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Drones
+namespace Drones.View
 {
     public class Building
     {
@@ -16,9 +16,8 @@ namespace Drones
         public int y = Helper.PositionY();
         public int largeur = 30;
         public int longueur = 30;
-        public static Color color = Color.Red;
         public const int NbrBuild = 4;
-
+        public static Color color = Color.Red;
 
 
         public Pen buildingBrush = new Pen(new SolidBrush(color), 3);
