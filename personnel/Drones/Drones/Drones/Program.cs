@@ -22,6 +22,14 @@ namespace Drones
             drone.Name = "Joe";
             fleet.Add(drone);
 
+            Drone drone1 = new Drone();
+            drone1.X = Helper.PositionX();
+            drone1.Y = Helper.PositionY();
+            drone1.Name = "Jack";
+            drone1.Charge = 10000;
+            fleet.Add(drone1);
+
+
             List<Building> buildings = new List<Building>();
             
             for (int i = 0; i < Building.NbrBuild; i++)
