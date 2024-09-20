@@ -9,17 +9,22 @@ namespace Drones.View
 {
     public class Factory : Building
     {
-        private int PowerConsuption;
-        public static new Color color = Color.Red;
+        private int _powerConsuption;
+        
 
-        public Pen factoryBrush = new Pen(new SolidBrush(color), 3);
+        private Pen factoryBrush = new Pen(new SolidBrush(Color.Red), 3);
+
+        public int PowerConsuption { get => _powerConsuption; set => _powerConsuption = value; }
+
+        
 
         public new void Render(BufferedGraphics drawingSpace)  
         {
-
-
+            
+           
+           
+            base.Render(drawingSpace);
             drawingSpace.Graphics.DrawRectangle(factoryBrush, new Rectangle(x, y, longueur, longueur));
-
         }
     }
 }

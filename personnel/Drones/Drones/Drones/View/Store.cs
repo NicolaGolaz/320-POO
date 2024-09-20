@@ -20,13 +20,13 @@ namespace Drones.View
             "Vendredi: 8h-18h"
         };
 
-        public Pen factoryBrush = new Pen(new SolidBrush(color), 3);
+        public Pen storeBrush = new Pen(new SolidBrush(color), 3);
 
         public new void Render(BufferedGraphics drawingSpace)
         {
 
-
-            drawingSpace.Graphics.DrawEllipse(factoryBrush, new Rectangle(x, y, longueur, longueur));
+            base.Render(drawingSpace);
+            drawingSpace.Graphics.DrawEllipse(storeBrush, new Rectangle(x, y, longueur, longueur));
 
         }
 

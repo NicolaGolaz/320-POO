@@ -17,16 +17,17 @@ namespace Drones.View
         public int largeur = 30;
         public int longueur = 30;
         public const int NbrBuild = 4;
-        public static Color color = Color.Red;
+        public static Color color = Color.LightGreen;
 
 
-        public Pen buildingBrush = new Pen(new SolidBrush(color), 3);
+        protected SolidBrush buildingBrush = new SolidBrush(color);
 
         public void Render(BufferedGraphics drawingSpace)
         {
 
+           
 
-            drawingSpace.Graphics.DrawRectangle(buildingBrush, new Rectangle(x, y, longueur, longueur));
+            drawingSpace.Graphics.FillRectangle(buildingBrush, new Rectangle(x-10, y-10, longueur + 20, longueur + 20));
 
         }
 
