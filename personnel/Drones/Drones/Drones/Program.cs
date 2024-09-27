@@ -16,11 +16,14 @@ namespace Drones
 
             // Création de la flotte de drones
             List<Drone> fleet= new List<Drone>();
-            Drone drone = new Drone();
-            drone.X = Helper.PositionX();
-            drone.Y = Helper.PositionY();
-            drone.Name = "Joe";
-            fleet.Add(drone);
+            for (int i = 0; i < 20; i++)
+            {
+                Drone drone = new Drone();
+                drone.X = Helper.PositionX();
+                drone.Y = Helper.PositionY();
+                drone.Name = "Joe";
+                fleet.Add(drone);
+            }
 
             Drone drone1 = new Drone();
             drone1.X = Helper.PositionX();
@@ -41,8 +44,17 @@ namespace Drones
                 buildings.Add(store);
             }
 
-            // Démarrage
-            Application.Run(new AirSpace(fleet, buildings));
+            try
+            {
+
+
+                // Démarrage
+                Application.Run(new AirSpace(fleet, buildings));
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("Une erreur est survenue !");
+            }
         }
     }
 }
