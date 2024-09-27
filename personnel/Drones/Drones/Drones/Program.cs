@@ -15,26 +15,24 @@ namespace Drones
             ApplicationConfiguration.Initialize();
 
             // Création de la flotte de drones
-            List<Drone> fleet= new List<Drone>();
+            List<Drone> fleet = new List<Drone>();
             for (int i = 0; i < 5; i++)
             {
-                Drone drone = new Drone();
-                drone.X = Helper.PositionX();
-                drone.Y = Helper.PositionY();
+                Drone drone = new Drone(Helper.PositionX(), Helper.PositionY());
+
                 drone.Name = "Joe";
                 fleet.Add(drone);
             }
 
-            Drone drone1 = new Drone();
-            drone1.X = Helper.PositionX();
-            drone1.Y = Helper.PositionY();
+            Drone drone1 = new Drone(Helper.PositionX(), Helper.PositionY());
+
             drone1.Name = "Jack";
             drone1.Charge = 10000;
             fleet.Add(drone1);
 
 
             List<Building> buildings = new List<Building>();
-            
+
             for (int i = 0; i < Building.NbrBuild; i++)
             {
                 Factory factory = new Factory();

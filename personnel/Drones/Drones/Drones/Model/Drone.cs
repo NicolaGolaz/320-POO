@@ -34,7 +34,11 @@ namespace Drones
             throw new NotImplementedException();
         }
 
-
+        public Drone(int x, int y)
+        {
+            this.x = x;
+            this.y = y;
+        }
 
 
         // Cette méthode calcule le nouvel état dans lequel le drone se trouve après
