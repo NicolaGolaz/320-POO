@@ -16,7 +16,7 @@ namespace Drones
 
             // Création de la flotte de drones
             List<Drone> fleet= new List<Drone>();
-            for (int i = 0; i < 20; i++)
+            for (int i = 0; i < 5; i++)
             {
                 Drone drone = new Drone();
                 drone.X = Helper.PositionX();
@@ -51,9 +51,9 @@ namespace Drones
                 // Démarrage
                 Application.Run(new AirSpace(fleet, buildings));
             }
-            catch (Exception ex)
+            catch (Exception e)
             {
-                throw new Exception("Une erreur est survenue !");
+                throw new Exception($"Une erreur est survenue !{e.Message}");
             }
         }
     }
