@@ -8,7 +8,7 @@ namespace Drones
 {
     internal static class Helper
     {
-
+        public static int DroneSize= 8;
         static Random random = new Random();
         public static int PositionX()
         {
