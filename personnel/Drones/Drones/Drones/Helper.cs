@@ -8,7 +8,7 @@ namespace Drones
 {
     internal static class Helper
     {
-        public static int DroneSize= 8;
+        public static int DroneSize = 8;
         static Random random = new Random();
         public static int PositionX()
         {
@@ -20,12 +20,34 @@ namespace Drones
             return valeurPositionX;
 
         }
+
+        public static int boxKilos()
+        {
+
+
+
+            int valeurKilo = random.Next(5, 10);
+
+            return valeurKilo;
+
+        }
+
+
         public static int PositionY()
         {
             int valeurPositionY = random.Next(0, 600);
 
             return valeurPositionY;
         }
+        public static int boxTime()
+        {
 
+
+
+            int valeurBoxTime = random.Next(5, 10);
+
+            return valeurBoxTime;
+
+        }
     }
 }

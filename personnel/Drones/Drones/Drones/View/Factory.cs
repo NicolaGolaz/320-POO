@@ -13,6 +13,8 @@ namespace Drones.View
 
         private int _id;
 
+        private int boxTimer = 0;
+
         private Pen factoryBrush = new Pen(new SolidBrush(Color.Red), 3);
 
         public Factory(int id)
@@ -23,15 +25,30 @@ namespace Drones.View
         public int PowerConsuption { get => _powerConsuption; set => _powerConsuption = value; }
         public int Id { get => _id; set => _id = value; }
 
-       
 
-        public new void Render(BufferedGraphics drawingSpace)  
+
+        public new void Render(BufferedGraphics drawingSpace)
         {
-            
-           
-           
+
+
+
             base.Render(drawingSpace);
             drawingSpace.Graphics.DrawRectangle(factoryBrush, new Rectangle(x, y, longueur, longueur));
+        }
+
+        public new void Update(int interval)
+        {
+            boxTimer += interval;
+            if (boxTimer >= 5000 + Helper.boxTime())
+            {
+                int i = 0;
+                List<Box> boxes = new List<Box>();
+                Box box = new Box(i++, Helper.boxKilos());
+                boxes.Add(box);
+                Console.WriteLine("Carton produit");
+                boxTimer = 0;
+            }
+
         }
     }
 }
