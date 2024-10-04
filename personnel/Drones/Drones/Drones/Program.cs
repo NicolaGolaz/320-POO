@@ -35,7 +35,8 @@ namespace Drones
 
             for (int i = 0; i < Building.NbrBuild; i++)
             {
-                Factory factory = new Factory();
+                Factory factory = new Factory(i);
+               
                 buildings.Add(factory);
 
                 Store store = new Store();

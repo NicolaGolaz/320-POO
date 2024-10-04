@@ -10,13 +10,20 @@ namespace Drones.View
     public class Factory : Building
     {
         private int _powerConsuption;
-        
+
+        private int _id;
 
         private Pen factoryBrush = new Pen(new SolidBrush(Color.Red), 3);
 
-        public int PowerConsuption { get => _powerConsuption; set => _powerConsuption = value; }
+        public Factory(int id)
+        {
+            Id = id;
+        }
 
-        
+        public int PowerConsuption { get => _powerConsuption; set => _powerConsuption = value; }
+        public int Id { get => _id; set => _id = value; }
+
+       
 
         public new void Render(BufferedGraphics drawingSpace)  
         {
