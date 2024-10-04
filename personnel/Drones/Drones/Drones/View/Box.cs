@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Drones.Model;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -6,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace Drones.View
 {
-    internal class Box
+    public class Box
     {
         private int boxId;
         private int kilos;

@@ -7,9 +7,9 @@ using System.Threading.Tasks;
 
 namespace Drones.Model
 {
-    interface IDispatchable
+    public interface IDispatchable
     {
-        List<Box> boxes { get; set; }
+        List<Box> Boxes { get; set; }
         public void Ajouter(Box box);
         public void Retirer(Box box);
 

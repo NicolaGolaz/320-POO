@@ -1,3 +1,4 @@
+using Drones.Model;
 using Drones.View;
 
 namespace Drones
@@ -83,7 +84,7 @@ namespace Drones
             foreach (Building building in buildings)
             {
                 if(building is Factory factory)
-                    factory.Update(interval);
+                    factory.Update(interval, dispatch);
             }
         }
 

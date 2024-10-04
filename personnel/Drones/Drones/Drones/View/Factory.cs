@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Drones.Model;
+using System;
 using System.Collections.Generic;
 using System.Drawing;
 using System.Linq;
@@ -17,6 +18,7 @@ namespace Drones.View
 
         private Pen factoryBrush = new Pen(new SolidBrush(Color.Red), 3);
 
+        int i = 0;
         public Factory(int id)
         {
             Id = id;
@@ -36,16 +38,14 @@ namespace Drones.View
             drawingSpace.Graphics.DrawRectangle(factoryBrush, new Rectangle(x, y, longueur, longueur));
         }
 
-        public new void Update(int interval)
+        public new void Update(int interval, Dispatch dispatch)
         {
             boxTimer += interval;
             if (boxTimer >= 5000 + Helper.boxTime())
             {
-                int i = 0;
-                List<Box> boxes = new List<Box>();
                 Box box = new Box(i++, Helper.boxKilos());
-                boxes.Add(box);
-                Console.WriteLine("Carton produit");
+                Console.WriteLine("Carton produit" + box.BoxId);
+                dispatch.Ajouter(box);
                 boxTimer = 0;
             }
 
