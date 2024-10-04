@@ -31,7 +31,7 @@ namespace Drones
             drone1.Charge = 10000;
             fleet.Add(drone1);
 
-            
+         
 
             List<Building> buildings = new List<Building>();
 
